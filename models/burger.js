@@ -28,9 +28,9 @@
 // module.exports = burger;
 
 module.exports = function(sequelize, DataTypes) {
-  var Burger = sequelize.define("Burger", {
-    text: {
-      burger_name: DataTypes.STRING,
+  var Burger = sequelize.define("burgers", {
+    burger_name: {
+      type: DataTypes.STRING,
       // AllowNull is a flag that restricts a todo from being entered if it doesn't
       // have a text value
       allowNull: false,
@@ -44,10 +44,10 @@ module.exports = function(sequelize, DataTypes) {
       // defaultValue is a flag that defaults a new todos complete value to false if
       // it isn't supplied one
       defaultValue: false
-    },
-    date:{
-      type: DataTypes.NOW
-    }
+    }//,
+    //date:{
+    //  type: DataTypes.NOW
+   // }
   });
   return Burger;
 };

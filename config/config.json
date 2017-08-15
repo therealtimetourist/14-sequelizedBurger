@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "sequelizedBurger_db_user",
-    "password": "toorregrub",
+    "username": "root",
+    "password": "R3dst0n3!",
     "database": "sequelizedBurger_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -14,7 +14,6 @@
     "dialect": "mysql"
   },
   "production": {
-    // how do you use the JAWSDB_URL variable here???
     "username": "v2qqih2h393hqtet",
     "password": "zpeqpadhfdeitff4",
     "database": "sequelizedBurger_db",
