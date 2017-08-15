@@ -1,0 +1,46 @@
+body{
+	margin-top: 12px;
+	background-color: #ffcc00;
+}
+
+li {
+  padding: 6px;
+  margin: 5px;
+  background: #faebd7;
+  list-style: none;
+  min-height: 48px;
+  text-align: left;
+  font: normal 18px/150% Arial, Helvetica, sans-serif;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 15px;
+  margin: 5px 5px 80px 5px;
+  background: #669900;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.jumbotron{
+	background-color: #ff531a;
+	border:8px #000 solid;
+}
+
+.jumbotron img{
+	max-width: 200px;
+}
+
+li form{
+	float:right;
+}
+
+.alt-color{
+	background-color: #663300;
+	border:2px #000 solid;
+}
