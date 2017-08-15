@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "sequelizedBurger_db_user",
+    "password": "toorregrub",
+    "database": "sequelizedBurger_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    // how do you use the JAWSDB_URL variable here???
+    "username": "v2qqih2h393hqtet",
+    "password": "zpeqpadhfdeitff4",
+    "database": "sequelizedBurger_db",
+    "host": "dyud5fa2qycz1o3v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}
