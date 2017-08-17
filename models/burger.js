@@ -1,7 +1,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   //define db table
-  var Burger = sequelize.define("Burger", {
+  var burgers = sequelize.define("burgers", {
     burger_name: {
       type: DataTypes.STRING,
       // validation: null (blank) values not allowed
@@ -19,5 +19,5 @@ module.exports = function(sequelize, DataTypes) {
     //  type: DataTypes.NOW
    // }
   });
-  return Burger;
+  return burgers;
 };
