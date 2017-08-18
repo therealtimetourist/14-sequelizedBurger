@@ -6,62 +6,49 @@ var router = express.Router();
 var db = require("../models");
 // Create routes/set up logic within routes
 router.get("/", function(req, res) {
-  // db.burger.all(function(data) {
-  //   var hbsObject = {
-  //     burgers: data
-  //   };
-  //   console.log(hbsObject);
-  //   // index.handlebars
-  //   res.render("index", hbsObject);
-  // });
   db.burgers.findAll({}).then(function(data){
     res.render("index",{burgers:data})
   });
 });
 
-router.post("/burgers/insertone", function(req, res) {
-  //db.burgers.findAll({}).then(function(burgers) {
-      // We have access to the todos as an argument inside of the callback function
-    db.burgers.create({
-      burger_name: req.burger_name,
-      //complete: req.body.complete
-    }).then(function(burger) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(burger);
-    });
-  //});
+router.post("/", function(req, res) {
+  // We have access to the todos as an argument inside of the callback function
+  db.burgers.create({
+    burger_name: req.body.burger_name,
+    devoured: req.body.devoured
+  }).then(function(burger) {
+    // We have access to the new todo as an argument inside of the callback function
+    res.json(burger);
+  });
+  res.redirect("/");
 });
 
-// update record
-router.put("/:id", function(req, res) {
-  // var condition = "id = " + req.params.id;
+// PUT route for updating todos. We can get the updated todo data from req.body
+router.post("/api/:id", function(req, res) {
+// Update takes in an object describing the properties we want to update, and
+// we use where to describe which objects we want to update
 
-  // console.log("condition", condition);
-
-  // Burger.update({
-  //   devoured: req.body.devoured
-  // }, condition, function() {
-  //   res.redirect("/");
-  // });
-  db.burgers.update({
-      burger_name: req.body.burger_name,
-      devoured: req.body.devoured
-    }, {
+  db.burgers.findOne({
+    where:{
+      id: req.params.id
+    }
+  }).then(function(burger){
+    db.burgers.update({
+     burger_name: burger.burger_name,
+     devoured: req.body.devoured
+    },
+    {
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function(burger) {
       res.json(burger);
     });
-
+    res.redirect("/");
+  });
 });
 
 router.delete("/:id", function(req, res) {
-  // var condition = "id = " + req.params.id;
-
-  // Burger.delete(condition, function() {
-  //   res.redirect("/");
-  // });
   db.burgers.destroy({
       where: {
         id: req.params.id

@@ -8,7 +8,7 @@
           <li>
             {{this.id}}. {{this.burger_name}}
 
-            <form action="/{{this.id}}?_method=PUT" method="POST">
+            <form action="/api/{{this.id}}" method="POST">
               <input type="hidden" name="devoured" value="1">
               <button class="btn btn-primary alt-color" type="submit">EAT UP!</button>
             </form>
